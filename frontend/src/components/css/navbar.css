@@ -1,0 +1,14 @@
+a.animation {
+    display: inline-block;
+}
+  
+a.animation:after {
+    display:block;
+    content: '';
+    width: inherit;
+    border-bottom: solid 3px white;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+
+a.animation:hover:after { transform: scaleX(1); }
