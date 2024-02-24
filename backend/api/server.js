@@ -1,9 +1,13 @@
 import express from 'express';
-import dotenv from "dotenv"
+import dotenv from 'dotenv';
+import cors from "cors";
 import { fetchChatRequest } from "./helpers/cohere.js"
+dotenv.config();
 
 const app = express();
 const port = 5000; 
+
+app.use(cors());
 
 app.get('/api', (req, res) => {
     res.send({"Hello": "World"});
