@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from "cors";
 import { fetchWorkoutRoutine, fetchMealPlan } from "./helpers/cohere-api.js";
-import { generateMeals } from './utils/script.js';
+import { generateMeals, generateWorkout } from './utils/script.js';
 
 dotenv.config();
 

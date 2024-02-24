@@ -1,5 +1,5 @@
 // function fetching workout routine plan
-import { generateMeals } from '../utils/script.js';
+import { generateMeals, generateWorkout } from '../utils/script.js';
 
 export const fetchWorkoutRoutine = async (goal) => {
     const stringGoal = goal.toString();
@@ -13,7 +13,19 @@ export const fetchWorkoutRoutine = async (goal) => {
         },
         body: JSON.stringify({
             model: 'command',
-            message: `give me a workout routine for 5 days a week tailored towards ${stringGoal} with no rest days`,
+            message: `IN THE FOLLOWING EXAMPLE, GENERATE TEXT LIKE IT, BUT NOT EXACTLY. HAVE TEXT WARM-UP,
+            CARDIO, AND EXERCISE PER DAY!
+            AN EXAMPLE WOULD BE:
+            "Day 1:
+            Warm-up: 10 mins of light cardio (e.g. stationary bike, jogging)
+            Cardio: 40 mins of moderate-intensity cardio (e.g. brisk walking, cycling)
+            Exercise:
+                Chest: 3 sets of 12-15 reps of dumbbell bench press using 2-3 different weights.
+                Back: 3 sets of 8-10 reps of pull-ups and 2 sets of 12-15 reps of seated cable row."
+            FOR Warm-up, Cardio, and Exercise, make the generation different between each day. FOR EXAMPLE,
+            DAY 1 can have chest and back exercises, while DAY 2 has legs and arms. SO, GIVEN THIS:
+            give me a 5 day (like Day 1, Day 2, Day 3, Day 4, Day 5) workout routine with a format
+            like = Warm-up, Cardio, Exercise towards a goal of ${stringGoal}.`,
         }),
     });
 
@@ -22,7 +34,7 @@ export const fetchWorkoutRoutine = async (goal) => {
     }
 
     const data = await response.json();
-    //scrapeDescription(data.text);
+    //const workout = generateWorkout(data.text);
     return data;
 };
 

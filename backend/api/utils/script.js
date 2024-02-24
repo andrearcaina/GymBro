@@ -23,3 +23,7 @@ export function generateMeals(data) {
 
     return days;
 }
+
+export function generateWorkout(data) {
+    
+}
