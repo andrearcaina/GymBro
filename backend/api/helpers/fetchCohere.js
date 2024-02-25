@@ -28,7 +28,7 @@ Warm-up: 10 mins of light stretches: neck rolls, shoulder circles, arm swings, l
 
     const data = await response.json();
     const workout = generateWorkout(data.text);
-    console.log(workout);
+    console.log("workout sent");
     return workout;
 };
 
@@ -67,6 +67,6 @@ export const fetchMealPlan = async (goal, dietRestrictions) => {
 
     const data = await response.json();
     const meals = generateMeals(data.text);
-    console.log(meals);
+    console.log("meals sent");
     return meals;
 };

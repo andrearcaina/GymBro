@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function RoadMapForm({onSubmit}) {
   const [hasDietaryRestrictions, setHasDietaryRestrictions] = useState(false);
   const [restrictionDetails, setRestrictionDetails] = useState('');
-  const [fitGoal, setFitGoal] = useState('bulking-and-muscle-growth'); // Default value
+  const [fitGoal, setFitGoal] = useState('weight-loss'); // Default value
 
   const handleCheckboxChange = (e) => {
     setHasDietaryRestrictions(e.target.checked);
@@ -25,14 +25,12 @@ export default function RoadMapForm({onSubmit}) {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:5000/api/mealPlan/${fitGoal}/${restrictionQueryString}`, {
-          method: 'GET',
-          headers: {
-              'Content-Type': 'application/json'
-          }
-      });
-      const mealData = await response.json();
-      onSubmit(mealData);
+      const fetchMealPlan = await fetch(`http://localhost:5000/api/mealPlan/${fitGoal}/${restrictionQueryString}`);
+      const fetchWorkout = await fetch(`http://localhost:5000/api/workout/${fitGoal}`);
+      const mealData = await fetchMealPlan.json();
+      const workoutData = await fetchWorkout.json(); 
+      // 28-35 second avg (10-13 + 18-22) to call both API's and render to screen HAHAH
+      onSubmit({meal: mealData, workout: workoutData});
       } catch (error) {
         console.error(error);
       }

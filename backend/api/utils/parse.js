@@ -37,13 +37,9 @@ export function generateWorkout(data) {
     const keys = keyData(data);
     data = trimData(data);
 
-    console.log(data);
-
     keys.forEach((key, index) => {
         const workouts = {};
         let exercises = [];
-
-        console.log(data.length);
 
         let index_offset = 3;
 
@@ -63,7 +59,6 @@ export function generateWorkout(data) {
                     workouts["Cardio"] = data[i].slice(data[i].indexOf(". Cardio")+9, data[i].length).trim();
                 }
             } else if (data[i] && (data[i].includes("1.")) && (data[i+1].includes("2."))) {
-                console.log(data[i + 1]);
                 exercises.push(data[i].trim());
                 exercises.push(data[i+1].trim());
                 workouts["Workouts"] = exercises;
