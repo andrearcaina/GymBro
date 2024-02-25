@@ -29,10 +29,10 @@ export default function Footer() {
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                 <div className="pl-16 mb-6 md:mb-0">
-                    <a href="#" className="flex items-center">
+                    <Link href="#" className="flex items-center">
                         <Image src="/assets/logo.png" width={80} height={80} className="h-32 w-32 me-3 hover:scale-110 transition-all duration-100 ease-in-out" alt="GymBro Logo" />
                         <span className="self-center text-2xl font-bold whitespace-nowrap text-white">GymBro</span>
-                    </a>
+                    </Link>
                 </div>
                 <div className="grid grid-cols-2 gap-16 sm:grid-cols-2">
                     <div>
