@@ -6,21 +6,21 @@ export default function About() {
     return(
         <div className="">
             <div className="max-w-md mx-auto">
-                <h2 className='text-center bg-sky-700 text-white font-bold rounded-3xl text-xl p-5 m-5 shadow-xl bg-contain'>Our Motivation</h2>
+                <h2 className='permanent-marker-regular text-center bg-sky-700 text-white font-bold rounded-3xl text-3xl p-5 m-5 shadow-xl bg-contain'>Our Motivation</h2>
             </div>
 
-            <p className="rounded-3xl text-center text-lg p-10 m-5 bg-gray-200 shadow-xl">When we first started our fitness journey, the biggest roadblock we all encountered was not knowing where to begin. We needed help figuring out which exercises to do and what foods to eat. Even with research, the abundance of resources made it overwhelming to choose a direction. Creating a simple schedule to stick to proved crucial in keeping us motivated, ultimately inspiring us to create GymBro.</p>
+            <p className="catamaran rounded-3xl text-center text-xl p-10 mx-32 bg-gray-200 shadow-xl">When we first started our fitness journey, the biggest roadblock we all encountered was not knowing where to begin. We needed help figuring out which exercises to do and what foods to eat. Even with research, the abundance of resources made it overwhelming to choose a direction. Creating a simple schedule to stick to proved crucial in keeping us motivated, ultimately inspiring us to create GymBro.</p>
             <hr className="my-4 border-gray-500 sm:mx-auto lg:my-6 w-1/2"/>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
 
-                <div className="bg-gray-200 shadow-md rounded p-4 ml-3">
-                    <h2 className="text-xl font-semibold mb-2">Daily Workout Routines</h2>
-                    <p className="text-gray-700">Fill out the form to receive a personalized map of workout routines for a week catered towards achieving your future goals!</p>
+                <div className="bg-gray-200 shadow-md rounded p-4 ml-5">
+                    <h2 className="catamaran text-2xl font-semibold mb-2">Daily Workout Routines</h2>
+                    <p className="catamaran text-lg text-gray-700">Fill out the form to receive a personalized map of workout routines for a week catered towards achieving your future goals!</p>
                 </div>
 
-                <div className="bg-gray-200 shadow-md rounded p-4 mr-3">
-                    <h2 className="text-xl font-semibold mb-2">Daily Meal Plans for Breakfast, Lunch, & Dinner</h2>
-                    <p className="text-gray-700">Recommends delicious recipes for the week to maintain a healthy and nutritious diet to maintain workout progress and boost your growth!</p>
+                <div className="bg-gray-200 shadow-md rounded p-4 mr-5">
+                    <h2 className="catamaran text-2xl font-semibold mb-2">Daily Meal Plans for Breakfast, Lunch, & Dinner</h2>
+                    <p className="catamaran text-lg text-gray-700">Recommends delicious recipes for the week to maintain a healthy and nutritious diet to maintain workout progress and boost your growth!</p>
                 </div>
 
             </div>
@@ -28,7 +28,7 @@ export default function About() {
             <hr className="my-4 border-gray-500 sm:mx-auto lg:my-6 w-1/2"/>
 
             <div className='max-w-xs mx-auto'>
-                <h2 className='text-center bg-sky-900 text-white font-bold rounded-3xl text-xl p-5 m-5 shadow-xl bg-contain'>The Team</h2>
+                <h2 className='permanent-marker-regular text-center bg-sky-700 text-white font-bold rounded-3xl text-2xl p-5 m-5 shadow-xl bg-contain'>The Team</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-[3rem]">
@@ -68,12 +68,12 @@ export default function About() {
                 <Link href="https://www.linkedin.com/in/josephleung1/" className="cursor-pointer bg-sky-800 p-10 hover:shadow-md hover:scale-105 transition-transform rounded-lg">
                     <Image src="/images/joseph.png" width={400} height={400} alt="Joseph" className="mb-2 rounded-full mx-auto w-40 h-40" />
                     
-                    <h2 className="text-lg text-white font-semibold mb-2">Joseph</h2>
+                    <h2 className="permanent-marker-regular text-lg text-white font-semibold mb-2">Joseph</h2>
                     
-                    <p className="text-gray-300 mb-2">2nd yr TMU CS student!</p>
-                    <p className="text-gray-300">Gym Sensei</p>
+                    <p className="permanent-marker-regular text-gray-300 mb-2">2nd yr TMU CS student!</p>
+                    <p className="text-gray-300 permanent-marker-regular">Gym Sensei</p>
                     <br />
-                    <p className="text-gray-300">Role: Backend Developer</p>
+                    <p className="text-gray-300 permanent-marker-regular">Role: Backend Developer</p>
                 </Link>
             </div>
         </div>

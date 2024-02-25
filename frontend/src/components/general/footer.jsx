@@ -30,13 +30,13 @@ export default function Footer() {
                 <div className="md:flex md:justify-between">
                 <div className="pl-16 mb-6 md:mb-0">
                     <Link href="#" className="flex items-center">
-                        <Image src="/assets/logo.png" width={80} height={80} className="h-32 w-32 me-3 hover:scale-110 transition-all duration-100 ease-in-out" alt="GymBro Logo" />
-                        <span className="self-center text-2xl font-bold whitespace-nowrap text-white">GymBro</span>
+                        <Image src="/assets/logo.png" width={80} height={80} className=" h-28 w-28 me-3 hover:scale-110 transition-all duration-100 ease-in-out" alt="GymBro Logo" />
+                        <span className="permanent-marker-regular self-center text-4xl font-bold whitespace-nowrap text-white">GymBro</span>
                     </Link>
                 </div>
                 <div className="grid grid-cols-2 gap-16 sm:grid-cols-2">
                     <div>
-                        <h2 className="text-center mb-6 text-sm font-bold text-white uppercase">Created By</h2>
+                        <h2 className="permanent-marker-regular text-center mb-6 text-md font-bold text-white uppercase">Created By</h2>
                         <ul className="grid grid-cols-2 gap-x-4 gap-y-4 text-gray-400 font-medium">
                             {footerItems.map((route, index) => (
                                 <li key={index} className="pl-5">
@@ -48,7 +48,7 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div>
-                        <h2 className="mb-6 text-sm font-bold text-white uppercase">Hackathon</h2>
+                        <h2 className="permanent-marker-regular mb-6 text-md font-bold text-white uppercase">Hackathon</h2>
                         <ul className="grid grid-row-2 gap-y-4 text-gray-400 font-medium">
                             {hackathonItems.map((route, index) => (
                                 <li key={index} className="pl-5">
