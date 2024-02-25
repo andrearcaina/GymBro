@@ -1,13 +1,11 @@
-import logo from '../../../public/assets/logo.png';
 import Link from 'next/link';
 import Image from 'next/image';
-import '../css/navbar.css';
+import '../../css/navbar.css';
 import { useState, useEffect } from 'react';
 import { NavMobile } from './nav-mobile';
 
 
 export default function Navbar() {
-
     const [NavItems, setNavItems] = useState([]);
 
     useEffect(() => {
@@ -30,7 +28,7 @@ export default function Navbar() {
                 <div className="flex items-center">
                     <Link href="/">
                         <p className="flex items-center space-x-2 text-white">
-                            <Image src={logo} alt="GymBro Logo" width={80} height={80} className="rounded-md logo-image md:w-[50px] md:h-[50px] lg:w-[80px] lg:h-[80px] h-16 w-16 hover:scale-110 transition-all duration-100 ease-in-out"/>
+                            <Image src="/assets/logo.png" alt="GymBro Logo" width={80} height={80} className="rounded-md logo-image md:w-[50px] md:h-[50px] lg:w-[80px] lg:h-[80px] h-16 w-16 hover:scale-110 transition-all duration-100 ease-in-out"/>
                             <span className="font-bold text-2xl lg:text-3xl">GymBro</span>
                         </p>
                     </Link>

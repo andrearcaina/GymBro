@@ -5,7 +5,5 @@ export default function HomeText() {
             <p>While numerous apps exist to track workouts and calories, none of them offer a personalized workout and meal plan feature to help people get started.</p>
             <p>That's where GymBro comes in!</p>
         </div>
-      
-        
     )
 }
