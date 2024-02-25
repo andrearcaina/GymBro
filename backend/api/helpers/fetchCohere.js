@@ -27,8 +27,9 @@ Warm-up: 10 mins of light stretches: neck rolls, shoulder circles, arm swings, l
     }
 
     const data = await response.json();
-    //const workout = generateWorkout(data.text);
-    return data;
+    const workout = generateWorkout(data.text);
+    console.log(workout);
+    return workout;
 };
 
 // function api fetching for meal plan
