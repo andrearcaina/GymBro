@@ -11,7 +11,7 @@ export const NavMobile = ({ links }) => {
     useClickAway(ref, () => setOpen(false));
 
     return (
-        <div ref={ref} className="lg:hidden custom-font">
+        <div ref={ref} className="text-white lg:hidden custom-font">
             <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
             <AnimatePresence>
                 {isOpen && (

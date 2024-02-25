@@ -1,8 +1,8 @@
-a.animation {
+p.animation {
     display: inline-block;
 }
   
-a.animation:after {
+p.animation:after {
     display:block;
     content: '';
     width: inherit;
@@ -11,4 +11,4 @@ a.animation:after {
     transition: transform 250ms ease-in-out;
 }
 
-a.animation:hover:after { transform: scaleX(1); }
+p.animation:hover:after { transform: scaleX(1); }
