@@ -1,4 +1,3 @@
-import logo from '../../../public/assets/logo.png'
 import Image from 'next/image'
 import '../css/footer.css'
 import { useState, useEffect } from 'react';
@@ -26,19 +25,19 @@ export default function Footer() {
     };
 
     return (
-        <footer class="bg-sky-950">
-            <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-                <div class="md:flex md:justify-between">
-                <div class="pl-16 mb-6 md:mb-0">
-                    <a href="#" class="flex items-center">
-                        <Image src={logo} class="h-32 w-32 me-3 hover:scale-110 transition-all duration-100 ease-in-out" alt="GymBro Logo" />
-                        <span class="self-center text-2xl font-bold whitespace-nowrap text-white">GymBro</span>
-                    </a>
+        <footer className="bg-sky-950 mt-[10rem]">
+            <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+                <div className="md:flex md:justify-between">
+                <div className="pl-16 mb-6 md:mb-0">
+                    <Link href="#" className="flex items-center">
+                        <Image src="/assets/logo.png" width={80} height={80} className="h-32 w-32 me-3 hover:scale-110 transition-all duration-100 ease-in-out" alt="GymBro Logo" />
+                        <span className="self-center text-2xl font-bold whitespace-nowrap text-white">GymBro</span>
+                    </Link>
                 </div>
-                <div class="grid grid-cols-2 gap-16 sm:grid-cols-2">
+                <div className="grid grid-cols-2 gap-16 sm:grid-cols-2">
                     <div>
-                        <h2 class="text-center mb-6 text-sm font-bold text-white uppercase">Created By</h2>
-                        <ul class="grid grid-cols-2 gap-x-4 gap-y-4 text-gray-400 font-medium">
+                        <h2 className="text-center mb-6 text-sm font-bold text-white uppercase">Created By</h2>
+                        <ul className="grid grid-cols-2 gap-x-4 gap-y-4 text-gray-400 font-medium">
                             {footerItems.map((route, index) => (
                                 <li key={index} className="pl-5">
                                     <Link href={route.href} className="hover:text-white">
@@ -49,8 +48,8 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div>
-                        <h2 class="mb-6 text-sm font-bold text-white uppercase">Hackathon</h2>
-                        <ul class="grid grid-row-2 gap-y-4 text-gray-400 font-medium">
+                        <h2 className="mb-6 text-sm font-bold text-white uppercase">Hackathon</h2>
+                        <ul className="grid grid-row-2 gap-y-4 text-gray-400 font-medium">
                             {hackathonItems.map((route, index) => (
                                 <li key={index} className="pl-5">
                                     <Link href={route.href} className="hover:text-white">
@@ -62,9 +61,9 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <hr class="my-4 border-white sm:mx-auto lg:my-6" />
-            <div class="text-center">
-                <span class=" text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 GymBro™. All Rights Reserved.
+            <hr className="my-4 border-white sm:mx-auto lg:my-6" />
+            <div className="text-center">
+                <span className=" text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 GymBro™. All Rights Reserved.
                 </span>
             </div>
             </div>
