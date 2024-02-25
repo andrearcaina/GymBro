@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-export default function RoadMapForm() {
+export default function RoadMapForm({onSubmit}) {
   const [hasDietaryRestrictions, setHasDietaryRestrictions] = useState(false);
   const [restrictionDetails, setRestrictionDetails] = useState('');
+  const [fitGoal, setFitGoal] = useState('bulking-and-muscle-growth'); // Default value
 
   const handleCheckboxChange = (e) => {
     setHasDietaryRestrictions(e.target.checked);
@@ -12,9 +13,34 @@ export default function RoadMapForm() {
     setRestrictionDetails(e.target.value);
   };
 
+  let restrictionQueryString = '';
+    
+  if(restrictionDetails === ''){
+    restrictionQueryString = "none";
+  }else{
+    restrictionQueryString = restrictionDetails;
+  }
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(`http://localhost:5000/api/mealPlan/${fitGoal}/${restrictionQueryString}`, {
+          method: 'GET',
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      });
+      const mealData = await response.json();
+      onSubmit(mealData);
+      } catch (error) {
+        console.error(error);
+      }
+  }
+
   return (
-    <form className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md" action="/submit" method="post">
-      <div className="mb-4">
+      <form className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md" action="/submit" onSubmit={handleFormSubmit}>
+        <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="age">Age:</label>
         <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="age" name="age"/>
       </div>
@@ -26,10 +52,11 @@ export default function RoadMapForm() {
 
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="fitGoal">Fitness Goal:</label>
-        <select className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fitGoal" name="fitGoal">
-          <option value="gainMuscle">Gain weight/muscle</option>
-          <option value="loseFat">Lose weight/body fat</option>
-          <option value="maintain">Maintain weight but gain muscle mass</option>
+        <select className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fitGoal" name="fitGoal" value={fitGoal} onChange={(e) => setFitGoal(e.target.value)}>
+          <option value="bulking-and-muscle-growth">Gain weight/muscle</option>
+          <option value="weight-loss">Lose weight/body fat</option>
+          <option value="maintain-weight-and-gain-muscle-mass">Maintain weight but gain muscle mass</option>
+          <option value="strengthen-abs">Strengthen Abs</option>
         </select>
       </div>
 
@@ -78,7 +105,7 @@ export default function RoadMapForm() {
             <span className="ml-2">Yes</span>
           </label>
           <label htmlFor="noDietaryRestrictions" className="inline-flex items-center ml-6">
-            <input type="checkbox" id="noDietaryRestrictions" name="dietaryRestrictions" value="no" checked={!hasDietaryRestrictions} onChange={handleCheckboxChange}/>
+            <input type="checkbox" id="noDietaryRestrictions" name="dietaryRestrictions" value="none" checked={!hasDietaryRestrictions} onChange={handleCheckboxChange}/>
             <span className="ml-2">No</span>
           </label>
         </div>
