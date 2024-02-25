@@ -66,5 +66,6 @@ export const fetchMealPlan = async (goal, dietRestrictions) => {
 
     const data = await response.json();
     const meals = generateMeals(data.text);
+    console.log(meals);
     return meals;
 };
