@@ -25,13 +25,13 @@ export default function Footer() {
     };
 
     return (
-        <footer className="bg-sky-950 mt-[10rem]">
+        <footer className="bg-sky-950 mt-[5rem]">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                 <div className="pl-16 mb-6 md:mb-0">
                     <Link href="#" className="flex items-center">
                         <Image src="/assets/logo.png" width={80} height={80} className=" h-28 w-28 me-3 hover:scale-110 transition-all duration-100 ease-in-out" alt="GymBro Logo" />
-                        <span className="permanent-marker-regular self-center text-4xl font-bold whitespace-nowrap text-white">GymBro</span>
+                        <span className="permanent-marker-regular self-center text-4xl font-bold whitespace-nowrap text-white hover:scale-110 transition-all duration-100 ease-in-out">GymBro</span>
                     </Link>
                 </div>
                 <div className="grid grid-cols-2 gap-16 sm:grid-cols-2">
