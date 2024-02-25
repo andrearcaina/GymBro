@@ -61,32 +61,6 @@ export default function RoadMapForm({onSubmit}) {
       </div>
 
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">Workouts per week:</label>
-        <div className="flex flex-wrap">
-          <label htmlFor="monday" className="mr-2">
-            <input type="checkbox" id="monday" name="workoutDay" value="Monday"/>
-            <span className="ml-1">Monday</span>
-          </label>
-          <label htmlFor="tuesday" className="mr-2">
-            <input type="checkbox" id="tuesday" name="workoutDay" value="Tuesday"/>
-            <span className="ml-1">Tuesday</span>
-          </label>
-          <label htmlFor="wednesday" className="mr-2">
-            <input type="checkbox" id="wednesday" name="workoutDay" value="Wednesday"/>
-            <span className="ml-1">Wednesday</span>
-          </label>
-          <label htmlFor="thursday" className="mr-2">
-            <input type="checkbox" id="thursday" name="workoutDay" value="Thursday"/>
-            <span className="ml-1">Thursday</span>
-          </label>
-          <label htmlFor="friday" className="mr-2">
-            <input type="checkbox" id="friday" name="workoutDay" value="Friday"/>
-            <span className="ml-1">Friday</span>
-          </label>
-        </div>
-      </div>
-
-      <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="aproxCal">Approximate Daily Caloric Intake:</label>
         <select className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="aproxCal" name="aproxCal">
           <option value="little">less than 2000 kcal</option>
