@@ -47,7 +47,8 @@ app.get("/api/workout/:goal", (req, res) => {
 app.get("/api/mealPlan/:goal/:dietRestrictions", (req, res) => {
     const goal = req.params.goal.toString();
     const dietRestrictions = req.params.dietRestrictions.toString();
-    
+
+    console.log("fetching data");
     if (!goal || !dietRestrictions) {
         res.status(400).json({ error: "Invalid goal or dietary restriction" })
         return
