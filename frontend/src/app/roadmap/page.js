@@ -1,5 +1,10 @@
+'use client';
+import { RoadMapForm } from "@/components";
+
 export default function Roadmap(){
     return(
-        <main>HEllo loquito</main>
+        <>
+        <RoadMapForm/>
+        </>
     )
 }
