@@ -19,15 +19,15 @@ export default function Day({ data }) {
               
               <div className="text-left pl-10">
                 <div>
-                  <p>Breakfast: {meals["Breakfast"]}</p>
+                  <p>Breakfast: {meals["Breakfast"]}/serving</p>
                   
                   <br />
                   
-                  <p>Lunch: {meals["Lunch"]}</p>
+                  <p>Lunch: {meals["Lunch"]}/serving</p>
                   
                   <br />
                   
-                  <p>Dinner: {meals["Dinner"]}</p>
+                  <p>Dinner: {meals["Dinner"]}/serving</p>
                   <br />
                 </div>
               </div>
