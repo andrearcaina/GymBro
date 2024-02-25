@@ -1,36 +1,53 @@
-import logo from '../../../public/assets/logo.png'
-import Image from 'next/image'
-import '../css/navbar.css'
+import logo from '../../../public/assets/logo.png';
+import Link from 'next/link';
+import Image from 'next/image';
+import '../css/navbar.css';
+import { useState, useEffect } from 'react';
+import { NavMobile } from './nav-mobile';
+
 
 export default function Navbar() {
+
+    const [NavItems, setNavItems] = useState([]);
+
+    useEffect(() => {
+        fetchNavItems();
+    }, []);
+
+    const fetchNavItems = async () => {
+        try {
+            const res = await fetch('/data/nav-items.json');
+            const navItems = await res.json();
+            setNavItems(navItems);
+        } catch (error) {
+            console.error("Error fetching nav-items data:", error);
+        }
+    };
+
     return (
-        <nav class="bg-sky-950 border-gray-200">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <Image src={logo} class="max-w-12 max-h-12" alt="GymBro Logo" />
-                    <span class="text-white self-center text-2xl font-semibold whitespace-nowrap">GymBro</span>
-                </a>
-                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                    </svg>
-                </button>
-                <div class="hidden w-full md:block md:w-auto pr-32" id="navbar-default">
-                    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-                        <li>
-                            <a href="#" class="block animation py-2 px-3 text-white rounded md:bg-transparent md:p-0 md:hover:text-blue-700" aria-current="page">Home</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block animation py-2 px-3 text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">About</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block animation py-2 px-3 text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Roadmap</a>
-                        </li>
-                    </ul>
+        <nav className="shadow-xl p-4 sticky top-0 z-50 custom-font bg-sky-950">
+            <div className="flex items-center justify-between max-w-7xl mx-auto px-4">
+                <div className="flex items-center">
+                    <Link href="/">
+                        <p className="flex items-center space-x-2 text-white">
+                            <Image src={logo} alt="GymBro Logo" width={80} height={80} className="rounded-md logo-image md:w-[50px] md:h-[50px] lg:w-[80px] lg:h-[80px] h-16 w-16 hover:scale-110 transition-all duration-100 ease-in-out"/>
+                            <span className="font-bold text-2xl lg:text-3xl">GymBro</span>
+                        </p>
+                    </Link>
                 </div>
+
+                <div className="hidden lg:flex lg:items-center lg:w-auto">
+                    <div className="flex flex-col lg:flex-row lg:space-x-4">
+                        {NavItems.map((route, index) => (
+                            <Link href={route.href} key={index}>
+                                <p className="animation text-white font-bold text-2xl pr-7 hover:scale-[1.15] hover:text-blue-500 transition-all duration-400">{route.text}</p>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
+                <NavMobile links={NavItems} />
             </div>
         </nav>
-
     )
 }
