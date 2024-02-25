@@ -73,5 +73,5 @@ export function generateWorkout(data) {
         days[key] = workouts;
     })
 
-    console.log(days);
+    return days;
 }
