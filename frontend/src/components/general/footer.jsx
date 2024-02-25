@@ -1,4 +1,3 @@
-import logo from '../../../public/assets/logo.png'
 import Image from 'next/image'
 import '../css/footer.css'
 import { useState, useEffect } from 'react';
@@ -31,7 +30,7 @@ export default function Footer() {
                 <div className="md:flex md:justify-between">
                 <div className="pl-16 mb-6 md:mb-0">
                     <a href="#" className="flex items-center">
-                        <Image src={logo} className="h-32 w-32 me-3 hover:scale-110 transition-all duration-100 ease-in-out" alt="GymBro Logo" />
+                        <Image src="/assets/logo.png" width={80} height={80} className="h-32 w-32 me-3 hover:scale-110 transition-all duration-100 ease-in-out" alt="GymBro Logo" />
                         <span className="self-center text-2xl font-bold whitespace-nowrap text-white">GymBro</span>
                     </a>
                 </div>
