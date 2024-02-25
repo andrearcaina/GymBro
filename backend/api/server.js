@@ -12,7 +12,7 @@ const port = 5000;
 app.use(cors());
 
 app.get('/api', (req, res) => {
-    res.send({"Hello": "World"});
+    res.json({"Hello": "World"});
 });
 
 app.get('/api/testgenerationmeals', (req, res) => {
@@ -41,7 +41,8 @@ app.get("/api/workout/:goal", (req, res) => {
 app.get("/api/mealPlan/:goal/:dietRestrictions", (req, res) => {
     const goal = req.params.goal.toString();
     const dietRestrictions = req.params.dietRestrictions.toString();
-
+    console.log(goal);
+    console.log(dietRestrictions);
     if (!goal || !dietRestrictions) {
         res.status(400).json({ error: "Invalid goal or dietary restriction" })
         return
