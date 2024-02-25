@@ -5,4 +5,4 @@ export { default as RoadMapForm } from './general/roadMapForm';
 export { default as HomeText } from './homepage/homeText';
 export { default as TitleHome } from './homepage/titleHome';
 export { default as GenerateRoadMap } from './homepage/generateRoadMap';
-export { default as Day1 } from './general/day1';
+export { default as Day } from './general/day';

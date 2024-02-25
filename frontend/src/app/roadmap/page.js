@@ -1,5 +1,5 @@
 'use client';
-import { RoadMapForm } from "@/components"
+import { RoadMapForm, Day } from "@/components"
 import { useState } from 'react';
 
 export default function Roadmap(){
@@ -11,11 +11,10 @@ export default function Roadmap(){
 
     return(
         <main>
-            <RoadMapForm onSubmit={handleFormSubmit}/>
             {Object.keys(data).length !== 0 ? (
-            <p>{data["Day 1"]["Dinner"]}</p>
+                <center><Day data={data} /></center>
             ) : 
-            <p>failed</p>}
+            <RoadMapForm onSubmit={handleFormSubmit}/>}
         </main>
     )
 }
