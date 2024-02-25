@@ -29,7 +29,7 @@ export default function Navbar() {
                     <Link href="/">
                         <p className="flex items-center space-x-2 text-white">
                             <Image src="/assets/logo.png" alt="GymBro Logo" width={80} height={80} className="rounded-md logo-image md:w-[50px] md:h-[50px] lg:w-[80px] lg:h-[80px] h-16 w-16 hover:scale-110 transition-all duration-100 ease-in-out"/>
-                            <span className="font-bold text-2xl lg:text-3xl">GymBro</span>
+                            <span className="permanent-marker-regular font-bold text-5xl lg:text-4xl">GymBro</span>
                         </p>
                     </Link>
                 </div>
@@ -38,7 +38,7 @@ export default function Navbar() {
                     <div className="flex flex-col lg:flex-row lg:space-x-4">
                         {NavItems.map((route, index) => (
                             <Link href={route.href} key={index}>
-                                <p className="animation text-white font-bold text-2xl pr-7 hover:scale-[1.15] hover:text-blue-500 transition-all duration-400">{route.text}</p>
+                                <p className="catamaran animation text-white font-extrabold text-2xl pr-7 hover:scale-[1.15] hover:text-blue-500 transition-all duration-400">{route.text}</p>
                             </Link>
                         ))}
                     </div>

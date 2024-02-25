@@ -10,8 +10,6 @@ export default function Home() {
         <HomeText />
       </div>
       <center><GenerateRoadMap/></center>
-      <br/>
-      <br/>
     </main>
   );
 }

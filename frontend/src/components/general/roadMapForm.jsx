@@ -39,18 +39,18 @@ export default function RoadMapForm({onSubmit}) {
   }
 
   return (
-      <form className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md" action="/submit" onSubmit={handleFormSubmit}>
+      <form className="catamaran max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md" action="/submit" onSubmit={handleFormSubmit}>
         <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="age">Age:</label>
-        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="age" name="age"/>
+        <label className="catamaran block text-gray-700 text-sm font-bold mb-2" htmlFor="age" required>Age:</label>
+        <input className="catamaran shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="age" name="age"/>
       </div>
 
-      <div className="mb-4">
+      <div className="catamaran mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="weight">Weight in lbs:</label>
         <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="weight" name="weight"/>
       </div>
 
-      <div className="mb-4">
+      <div className="catamaran mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="fitGoal">Fitness Goal:</label>
         <select className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fitGoal" name="fitGoal" value={fitGoal} onChange={(e) => setFitGoal(e.target.value)}>
           <option value="weight-gain">Gain weight/muscle</option>
@@ -60,7 +60,7 @@ export default function RoadMapForm({onSubmit}) {
         </select>
       </div>
 
-      <div className="mb-4">
+      <div className="catamaran mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="aproxCal">Approximate Daily Caloric Intake:</label>
         <select className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="aproxCal" name="aproxCal">
           <option value="little">less than 2000 kcal</option>
@@ -71,7 +71,7 @@ export default function RoadMapForm({onSubmit}) {
         </select>
       </div>
 
-      <div className="mb-4">
+      <div className="catamaran mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="dietaryRestrictions">Do you have any dietary restrictions?</label>
         <div>
           <label htmlFor="dietaryRestrictions" className="inline-flex items-center">
@@ -86,14 +86,14 @@ export default function RoadMapForm({onSubmit}) {
       </div>
 
       {hasDietaryRestrictions && (
-        <div className="mb-4">
+        <div className="catamaran mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="restriction-details">Please explain your dietary restrictions:</label>
           <textarea className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="restriction-details" name="restriction-details" rows="4" cols="50" value={restrictionDetails} onChange={handleDetailsChange}></textarea>
         </div>
       )}
 
-      <div className="flex justify-center">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit</button>
+      <div className="catamaran flex justify-center">
+        <button className="permanent-marker-regular bg-blue-500 hover:bg-blue-700 text-white font-bold text-2xl py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline" type="submit">Submit</button>
       </div>
     </form>
   );
