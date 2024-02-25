@@ -13,7 +13,7 @@ export const fetchWorkoutRoutine = async (goal) => {
         },
         body: JSON.stringify({
             model: 'command',
-            message: `make me a routine based off of this format, do this for day 1 all the way to day 5. Follow this format everytime and do not include any other text besides this! Do this fast, make it short.
+            message: `make me a ${stringGoal} routine based off of this format, do this for day 1 all the way to day 5. Follow this format everytime and do not include any other text besides this! Do this fast, make it short.
 "Day 1: 
 Warm-up: 10 mins of light stretches: neck rolls, shoulder circles, arm swings, leg swings, ankle rotations, Cardio: 40 mins of moderate-intensity cardio (e.g. brisk walking, cycling), 
 1. {Muscle Group}: 3 sets of 8-12 reps of {Workout Type}, and {Workout Type} 

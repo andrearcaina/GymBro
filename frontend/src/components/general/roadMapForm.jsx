@@ -53,10 +53,10 @@ export default function RoadMapForm({onSubmit}) {
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="fitGoal">Fitness Goal:</label>
         <select className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fitGoal" name="fitGoal" value={fitGoal} onChange={(e) => setFitGoal(e.target.value)}>
-          <option value="bulking-and-muscle-growth">Gain weight/muscle</option>
+          <option value="weight-gain">Gain weight/muscle</option>
           <option value="weight-loss">Lose weight/body fat</option>
-          <option value="maintain-weight-and-gain-muscle-mass">Maintain weight but gain muscle mass</option>
-          <option value="strengthen-abs">Strengthen Abs</option>
+          <option value="muscle-growth">Maintain weight but gain muscle mass</option>
+          <option value="ab-training">Strengthen Abs</option>
         </select>
       </div>
 
