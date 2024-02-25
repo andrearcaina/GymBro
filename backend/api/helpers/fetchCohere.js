@@ -1,10 +1,10 @@
 // function fetching workout routine plan
-import { generateMeals, generateWorkout } from '../utils/script.js';
+import { generateMeals, generateWorkout } from '../utils/parse.js';
 
 export const fetchWorkoutRoutine = async (goal) => {
     const stringGoal = goal.toString();
 
-    const response = await fetch('https://api.cohere.ai/v1/chat', {
+    const response = await fetch('https://api.cohere.ai/v1/generate', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -12,20 +12,18 @@ export const fetchWorkoutRoutine = async (goal) => {
             Authorization: `Bearer ${process.env.COHERE_API_TOKEN}`,
         },
         body: JSON.stringify({
-            model: 'command',
-            message: `IN THE FOLLOWING EXAMPLE, GENERATE TEXT LIKE IT, BUT NOT EXACTLY. HAVE TEXT WARM-UP,
-            CARDIO, AND EXERCISE PER DAY!
-            AN EXAMPLE WOULD BE:
+            prompt: `Generate me a 5 day (Day 1, Day 2, Day 3, Day 4, Day 5) workout routine with a format = Cardio and Exercise towards a goal of ${stringGoal}. 
+            Make sure you include:
+            {MUSCLE_GROUP} = chest
+            {WORKOUT_TYPE} = pull ups
+            Now, an example of one day would be:
             "Day 1:
-            Warm-up: 10 mins of light cardio (e.g. stationary bike, jogging)
             Cardio: 40 mins of moderate-intensity cardio (e.g. brisk walking, cycling)
             Exercise:
-                Chest: 3 sets of 12-15 reps of dumbbell bench press using 2-3 different weights.
-                Back: 3 sets of 8-10 reps of pull-ups and 2 sets of 12-15 reps of seated cable row."
-            FOR Warm-up, Cardio, and Exercise, make the generation different between each day. FOR EXAMPLE,
-            DAY 1 can have chest and back exercises, while DAY 2 has legs and arms. SO, GIVEN THIS:
-            give me a 5 day (like Day 1, Day 2, Day 3, Day 4, Day 5) workout routine with a format
-            like = Warm-up, Cardio, Exercise towards a goal of ${stringGoal}.`,
+            1. {MUSCLE_GROUP}: 3 sets of 8-12 reps of {WORKOUT_TYPE}, and {WORKOUT_TYPE}
+            2. {MUSCLE_GROUP}: 3 sets of 8-12 reps of {WORKOUT_TYPE}, and {WORKOUT_TYPE}"
+            FOR Cardio and Exercise, make the generation different between each day. FOR EXAMPLE,
+            DAY 1 can have chest and back exercises, while DAY 2 has legs and arms.`,
         }),
     });
 
