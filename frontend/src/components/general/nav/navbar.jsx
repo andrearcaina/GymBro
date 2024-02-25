@@ -29,7 +29,7 @@ export default function Navbar() {
                     <Link href="/">
                         <p className="flex items-center space-x-2 text-white">
                             <Image src="/assets/logo.png" alt="GymBro Logo" width={80} height={80} className="rounded-md logo-image md:w-[50px] md:h-[50px] lg:w-[80px] lg:h-[80px] h-16 w-16 hover:scale-110 transition-all duration-100 ease-in-out"/>
-                            <span className="permanent-marker-regular font-bold text-5xl lg:text-4xl">GymBro</span>
+                            <span className="permanent-marker-regular font-bold text-5xl lg:text-4xl hover:scale-110 transition-all duration-100 ease-in-out">GymBro</span>
                         </p>
                     </Link>
                 </div>

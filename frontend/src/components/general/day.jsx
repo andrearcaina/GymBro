@@ -81,7 +81,7 @@ export default function Day({ data }) {
                 <div className="flex justify-center items-center text-left pl-10 h-[95%]">
                   <div className="bg-gray-300 p-4 rounded-3xl">
                     {data.meal[day]["Breakfast"] ? (
-                      <p>Breakfast: {data.meal[day]["Breakfast"].replace(/\./g, '').replace(/\)/g, '')}/serving)</p>
+                      <p>Breakfast: {data.meal[day]["Breakfast"].replace(/\..*$/, '').replace(/\)/g, '')}/serving)</p>
                     ) :
                       <p>Breakfast: Omelette with a side of Avocado Toast (600 calories/serving)</p>
                     }
